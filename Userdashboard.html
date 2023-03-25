@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Logout</a></li>
+		  <li><a href="#">Products</a></li>
+        </ul>
+      </nav>
+    </header>
+      <h1>UWelcome to Your Account</h1>
+      <section id="account-info">
+
+	<link rel="stylesheet" href="Go Green.css">
+	
+  </head>
+  <body>
+    <p>Your current points: <span id="user-points"></span></p>
+    
+    <script>
+      // Fetch user's points from the server-side script
+      // and display it in the "user-points" span
+      const userPointsSpan = document.getElementById("user-points");
+      fetch("get_user_points.php")
+        .then(response => response.text())
+        .then(userPoints => userPointsSpan.textContent = userPoints);
+    </script>
+  </body>
+</html>
